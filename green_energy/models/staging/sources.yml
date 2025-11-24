@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_energy
+    database: effidic-stage-2026  # Ton ID Projet
+    schema: raw_energy            # Ton Dataset BigQuery
+    tables:
+      - name: conso_quotidienne

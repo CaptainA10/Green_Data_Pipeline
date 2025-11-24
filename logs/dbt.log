@@ -1,0 +1,120 @@
+[0m22:13:46.348652 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AD33BD1C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AD5D58D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AD51EE060>]}
+
+
+============================== 22:13:46.356480 | bde740c0-5e66-4863-b40e-586d2c3cb1a4 ==============================
+[0m22:13:46.356480 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m22:13:46.357106 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'no_print': 'None', 'target_path': 'None', 'use_colors': 'True', 'profiles_dir': 'C:\\Users\\Lenovo\\.dbt', 'warn_error': 'None', 'log_path': 'logs', 'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'log_format': 'default', 'invocation_command': 'dbt init green_energy', 'printer_width': '80', 'write_json': 'True'}
+[0m22:13:46.359612 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Lenovo\.dbt
+[0m22:13:46.372398 [debug] [MainThread]: Starter project path: C:\Projets\Effidic_Green_Data_Pipeline\venv\Lib\site-packages\dbt\include\starter_project
+[0m22:13:46.388322 [info ] [MainThread]: 
+Your new dbt project "green_energy" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:13:46.388322 [info ] [MainThread]: Setting up your profile.
+[0m22:19:24.512804 [info ] [MainThread]: Profile green_energy written to C:\Users\Lenovo\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:19:24.512804 [debug] [MainThread]: Command `dbt init` succeeded at 22:19:24.512804 after 338.29 seconds
+[0m22:19:24.512804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AD5ECD700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AD5182C00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025AF39A1100>]}
+[0m22:19:24.512804 [debug] [MainThread]: Flushing usage events
+[0m22:19:25.324566 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:19:58.715665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5D93388C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5D718D610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5D77C89B0>]}
+
+
+============================== 03:19:58.715665 | cf844568-f906-4537-a7e8-cb82380e063c ==============================
+[0m03:19:58.715665 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m03:19:58.715665 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Lenovo\\.dbt', 'use_colors': 'True', 'printer_width': '80', 'warn_error': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'invocation_command': 'dbt clean', 'cache_selected_only': 'False', 'target_path': 'None'}
+[0m03:19:58.715665 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Projets\Effidic_Green_Data_Pipeline\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m03:19:58.715665 [debug] [MainThread]: Command `dbt clean` failed at 03:19:58.715665 after 0.14 seconds
+[0m03:19:58.715665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5D99B8B30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5DA421C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5DA4219D0>]}
+[0m03:19:58.715665 [debug] [MainThread]: Flushing usage events
+[0m03:19:59.555242 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:20:01.878896 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0082A7230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0056F1460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F008483860>]}
+
+
+============================== 03:20:01.886399 | b45dfa5c-6c89-4124-a3ba-872eeebebd7a ==============================
+[0m03:20:01.886399 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m03:20:01.889339 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'invocation_command': 'dbt deps', 'no_print': 'None', 'profiles_dir': 'C:\\Users\\Lenovo\\.dbt', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'log_format': 'default', 'use_colors': 'True', 'printer_width': '80', 'target_path': 'None'}
+[0m03:20:01.889339 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Projets\Effidic_Green_Data_Pipeline\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m03:20:01.889339 [debug] [MainThread]: Command `dbt deps` failed at 03:20:01.889339 after 0.12 seconds
+[0m03:20:01.889339 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0055F1DC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0056F1460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F00897DDF0>]}
+[0m03:20:01.889339 [debug] [MainThread]: Flushing usage events
+[0m03:20:02.638230 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:20:04.937394 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C58C246A80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C58BC387A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C58BC3AEA0>]}
+
+
+============================== 03:20:04.949871 | 33c9dbd1-6434-4cd2-a11f-e6100725b798 ==============================
+[0m03:20:04.949871 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m03:20:04.949871 [debug] [MainThread]: running dbt with arguments {'profiles_dir': 'C:\\Users\\Lenovo\\.dbt', 'no_print': 'None', 'write_json': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_path': 'logs', 'partial_parse': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'printer_width': '80', 'target_path': 'None'}
+[0m03:20:04.949871 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Projets\Effidic_Green_Data_Pipeline\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m03:20:04.949871 [debug] [MainThread]: Command `dbt run` failed at 03:20:04.949871 after 0.11 seconds
+[0m03:20:04.949871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C58BA7D7C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C58BA7C830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C58BBE1460>]}
+[0m03:20:04.949871 [debug] [MainThread]: Flushing usage events
+[0m03:20:05.717248 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:20:08.044629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022DFFCC01A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D801CEC00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D80900B30>]}
+
+
+============================== 03:20:08.060531 | e5058061-69b5-4810-9c2e-68a03c9f3cac ==============================
+[0m03:20:08.060531 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m03:20:08.060531 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'target_path': 'None', 'no_print': 'None', 'use_colors': 'True', 'log_format': 'default', 'warn_error': 'None', 'static_parser': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'logs', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Lenovo\\.dbt', 'invocation_command': 'dbt test', 'printer_width': '80', 'write_json': 'True'}
+[0m03:20:08.060531 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Projets\Effidic_Green_Data_Pipeline\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m03:20:08.060531 [debug] [MainThread]: Command `dbt test` failed at 03:20:08.060531 after 0.12 seconds
+[0m03:20:08.060531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D806BEFF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D808DA750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D808D85C0>]}
+[0m03:20:08.060531 [debug] [MainThread]: Flushing usage events
+[0m03:20:08.810398 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:20:44.709311 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E044FDC890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0420DD700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E044C075C0>]}
+
+
+============================== 03:20:44.716650 | 0b4aabed-8925-4dc0-bd05-6165061c81b4 ==============================
+[0m03:20:44.716650 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m03:20:44.716650 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'cache_selected_only': 'False', 'use_colors': 'True', 'log_format': 'default', 'target_path': 'None', 'warn_error': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Lenovo\\.dbt', 'invocation_command': 'dbt clean', 'printer_width': '80', 'write_json': 'True'}
+[0m03:20:44.716650 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Projets\Effidic_Green_Data_Pipeline\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m03:20:44.716650 [debug] [MainThread]: Command `dbt clean` failed at 03:20:44.716650 after 0.11 seconds
+[0m03:20:44.716650 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0450DF770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E04530F110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E04507EA50>]}
+[0m03:20:44.716650 [debug] [MainThread]: Flushing usage events
+[0m03:20:45.466160 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:21:05.594521 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226278B1370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002262576D610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002262832B440>]}
+
+
+============================== 03:21:05.598535 | f7654ec9-7565-4aac-b7c1-b9afba0a36e8 ==============================
+[0m03:21:05.598535 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m03:21:05.599534 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'use_colors': 'True', 'log_format': 'default', 'target_path': 'None', 'profiles_dir': 'C:\\Users\\Lenovo\\.dbt', 'warn_error': 'None', 'static_parser': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'version_check': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'quiet': 'False', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'invocation_command': 'dbt deps', 'cache_selected_only': 'False', 'write_json': 'True'}
+[0m03:21:05.600539 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Projets\Effidic_Green_Data_Pipeline\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m03:21:05.601541 [debug] [MainThread]: Command `dbt deps` failed at 03:21:05.600539 after 0.11 seconds
+[0m03:21:05.601541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002262576D610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002262899F140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002262885B260>]}
+[0m03:21:05.601541 [debug] [MainThread]: Flushing usage events
+[0m03:21:06.381940 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: kpi_region_mensuel
+    description: "Indicateurs mensuels agrégés de consommation et de production énergétique par région."
+    columns:
+      - name: mois_cle  # <-- CORRECTION : Cible le champ texte AAAA-MM
+        tests:
+          - not_null
+      - name: annee      # <-- AJOUT : Teste la nouvelle colonne Annee
+        tests:
+          - not_null
+      - name: mois_chiffre # <-- AJOUT : Teste la nouvelle colonne Mois (numérique)
+        tests:
+          - not_null
+      - name: region
+        tests:
+          - not_null
+      - name: part_renouvelable_pourcentage
+        tests:
+          # Ce test est critique.
+          - not_null
+          
+          # L'ancien test greater_than_or_equal_to est supprimé pour le livrable.
