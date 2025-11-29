@@ -1,6 +1,7 @@
 # 🌿 Green Energy Data Engineering Project  
 Modern Data Stack – ELT Pipeline for Renewable Energy Analytics  
 
+[![Live Dashboard](https://img.shields.io/badge/Looker_Studio-Dashboard-brightgreen?style=for-the-badge&logo=google&logoColor=white)](https://lookerstudio.google.com/s/u-64-Hc96RQ)
 [![Live Demo](https://img.shields.io/badge/DEMO-LIVE-brightgreen?style=for-the-badge)](https://your-demo-link.com)
 
 ---
@@ -24,7 +25,7 @@ Modern Data Stack – ELT Pipeline for Renewable Energy Analytics
 - Automated **data quality tests** (DataOps)
 - Analytical KPIs (Region × Month)
 - YoY time-series comparison
-- Interactive **Looker Studio** dashboard
+- Interactive **Looker Studio dashboard**
 - Reproducible, version-controlled environment
 - Cloud-deployable architecture
 
@@ -132,6 +133,7 @@ green_energy:
       dataset: "dbt_production"
       threads: 4
 
+
 🚀 Deployment Guide
 
 Create the dbt_production dataset in BigQuery
@@ -140,13 +142,8 @@ Upload raw datasets using ingestion scripts
 
 Run dbt via CI/CD (GitHub Actions, GitLab CI, dbt Cloud)
 
-Publish your Looker Studio dashboard
+Publish your Looker Studio dashboard → Live Dashboard
 
-📊 Free-Tier Limitations (Important)
-Service	Limitation
-BigQuery	Limited free query quota per month
-Storage	Limited free storage space
-Looker Studio	Performance may degrade with large datasets
 🤝 Contributing
 
 Fork the repository
@@ -160,20 +157,6 @@ Open a Pull Request
 👨‍💻 Author
 
 NGUETTE FANE Gad
-Data Engineer – Cloud & Analytics
+Data Engineer Student – Cloud & Analytics
 
 📧 Email: nguettefanegad@gmail.com
-
-🔗 LinkedIn: https://linkedin.com/in/your-profile
-
-📬 Support
-
-For help, questions, or issues:
-👉 Open a GitHub Issue
-or contact: nguettefanegad@gmail.com
-
-
----
-
-Si tu veux — je peux te fournir **la version prête à coller** (markdown) **et** une **preview HTML** (pour vérifier le rendu du README avant de le pousser), afin que tu sois sûr que tout s’affiche bien. Veux-tu que je la prépare pour toi ?
-::contentReference[oaicite:0]{index=0}
