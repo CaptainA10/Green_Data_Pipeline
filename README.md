@@ -42,7 +42,7 @@ This project processes raw renewable energy data to compute granular KPIs suppor
 | Extract & Load | Python | Load raw CSV files to BigQuery |
 | Data Warehouse | BigQuery | Serverless scalable storage |
 | Transform | dbt Core | Modeling, cleaning, KPI creation |
-| Visualization | Looker Studio | Dashboards |
+| Visualization | Looker Studio | Dashboards ([Live Dashboard](https://lookerstudio.google.com/s/u-64-Hc96RQ)) |
 | Infra & Tools | Git, Bash, Python venv | Automation & reproducibility |
 
 ---
@@ -65,7 +65,7 @@ The pipeline produces a final analytics table:
 
 ## 📈 Dashboard Preview
 
-![Dashboard Looker Studio](docs/3_dashboard_looker.png)
+[![Looker Studio Dashboard](docs/3_dashboard_looker.png)](https://lookerstudio.google.com/s/u-64-Hc96RQ)
 
 ---
 
