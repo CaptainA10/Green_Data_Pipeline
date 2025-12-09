@@ -1,0 +1,11 @@
+green_energy:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: effidic-stage-2026
+      dataset: green_energy_dbt # Target dataset for dbt models. Adjust if needed.
+      threads: 1
+      keyfile: /opt/airflow/keys/service-account.json
+      location: EU # Adjust location if necessary

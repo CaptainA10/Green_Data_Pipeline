@@ -9,3 +9,8 @@ __pycache__/
 
 # Ignorer les fichiers système
 .DS_Store
+
+# Airflow
+airflow/keys/
+airflow/logs/
+airflow/plugins/
