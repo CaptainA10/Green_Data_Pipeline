@@ -1,29 +1,36 @@
 with source as (
-    select * from {{ source('raw_energy', 'conso_quotidienne') }}
+    select * from {{ source('raw_energy', 'daily_weather') }}
 ),
 
 renamed as (
     select
-        -- Date corrigée précédemment
-        date___heure as date_reference, 
-        code_insee_region,
-        region,
+        -- Mapping de la date
+        date as date_reference,
         
-        -- Noms réels de BigQuery (à gauche) aliasés vers des noms explicites (à droite)
-        coalesce(consommation_mw, 0) as consommation_mw,
+        -- Simulation de la région (Données Paris -> Île-de-France)
+        '11' as code_insee_region,
+        'Île-de-France' as region,
         
-        -- Corrections (On utilise le nom réel de BigQuery)
-        coalesce(nucleaire_mw, 0) as production_nucleaire_mw,
+        -- Simulation de la Consommation basée sur la température (Modèle simple : + froid = + chauffage)
+        -- Hypothèse : Base 2000 MW + 1000 MW par degré sous 20°C
+        GREATEST(2000, (20 - SAFE_CAST(min_temp_c AS FLOAT64)) * 1000 + 2000) as consommation_mw,
         
-        -- CORRECTION CRUCIALE : SAFE_CAST pour convertir le STRING en FLOAT
-        coalesce(SAFE_CAST(eolien_mw AS BIGNUMERIC), 0) as production_eolienne_mw,
+        -- Simulation du Nucléaire (Base stable)
+        5000 as production_nucleaire_mw,
         
-        coalesce(solaire_mw, 0) as production_solaire_mw,
+        -- Simulation de l'Eolien (Basé sur le vent)
+        -- Hypothèse : 50 MW par km/h de vent
+        coalesce(SAFE_CAST(max_wind_speed_kmh AS FLOAT64) * 50, 0) as production_eolienne_mw,
         
-        -- On conserve les autres colonnes utiles pour info
-        coalesce(thermique_mw, 0) as production_thermique_mw,
-        coalesce(hydraulique_mw, 0) as production_hydraulique_mw,
-        coalesce(bioenergies_mw, 0) as production_bioenergies_mw
+        -- Simulation du Solaire (Basé sur la radiation)
+        -- Hypothèse : 100 MW par MJ/m²
+        coalesce(SAFE_CAST(solar_radiation_mj_m2 AS FLOAT64) * 100, 0) as production_solaire_mw,
+        
+        -- Autres sources à 0 pour ce MVP
+        0 as production_thermique_mw,
+        0 as production_hydraulique_mw,
+        0 as production_bioenergies_mw
+
     from source
 )
 

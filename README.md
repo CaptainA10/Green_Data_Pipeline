@@ -67,6 +67,25 @@ The pipeline produces a final analytics table:
 
 [![Looker Studio Dashboard](docs/3_dashboard_looker.png)](https://lookerstudio.google.com/s/u-64-Hc96RQ)
 
+### 📊 Configuration des Graphiques
+
+Voici les détails pour reproduire les visualisations météo :
+
+#### 1. Température maximale (Line Chart)
+- **Dimension** : `date`
+- **Mesure** : `max_temp_c`
+- *Objectif* : Suivre l'évolution des pics de chaleur.
+
+#### 2. Rayonnement solaire (Line/Area Chart)
+- **Dimension** : `date`
+- **Mesure** : `solar_radiation_mj_m2`
+- *Objectif* : Identifier les périodes d'ensoleillement optimal.
+
+#### 3. Vitesse du vent (Line Chart)
+- **Dimension** : `date`
+- **Mesure** : `max_wind_speed_kmh`
+- *Objectif* : Repérer les épisodes venteux pour l'éolien.
+
 ---
 
 ## 🔐 Data Quality (DataOps via dbt)

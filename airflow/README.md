@@ -42,17 +42,17 @@ airflow/
 1.  **Construction de l'image** :
     ```bash
     cd airflow
-    docker-compose build
+    docker compose build
     ```
 
 2.  **Initialisation** (Premier lancement uniquement) :
     ```bash
-    docker-compose up airflow-init
+    docker compose up airflow-init
     ```
 
 3.  **Démarrage** :
     ```bash
-    docker-compose up -d
+    docker compose up -d
     ```
 
 4.  **Accès UI** : [http://localhost:8080](http://localhost:8080) (Logins: `admin` / `admin`).

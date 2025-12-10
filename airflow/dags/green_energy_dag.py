@@ -60,16 +60,17 @@ with DAG(
 
     # 4. Transformation: dbt run
     # Using the mounted profile at /opt/dbt/profiles.yml
+    # We use the full path to dbt and run deps first
     dbt_run = BashOperator(
         task_id='dbt_run',
-        bash_command='dbt run --project-dir /opt/dbt --profiles-dir /opt/dbt',
+        bash_command='/home/airflow/.local/bin/dbt deps --project-dir /opt/dbt --profiles-dir /opt/dbt && /home/airflow/.local/bin/dbt run --project-dir /opt/dbt --profiles-dir /opt/dbt',
         env={'GOOGLE_APPLICATION_CREDENTIALS': '/opt/airflow/keys/service-account.json'}
     )
 
     # 5. Testing: dbt test
     dbt_test = BashOperator(
         task_id='dbt_test',
-        bash_command='dbt test --project-dir /opt/dbt --profiles-dir /opt/dbt',
+        bash_command='/home/airflow/.local/bin/dbt test --project-dir /opt/dbt --profiles-dir /opt/dbt',
         env={'GOOGLE_APPLICATION_CREDENTIALS': '/opt/airflow/keys/service-account.json'}
     )
 
