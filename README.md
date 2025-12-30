@@ -1,129 +1,111 @@
-# Green Energy Data Engineering Project
+# Green Energy Data Pipeline
 
-End-to-end Modern Data Stack project delivering reliable, analytics-ready KPIs for renewable energy monitoring and decision support.
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![BigQuery](https://img.shields.io/badge/BigQuery-Cloud-orange.svg)
+![dbt](https://img.shields.io/badge/dbt-Core-red.svg)
+![License](https://img.shields.io/badge/License-Academic-green.svg)
 
-[![Live Dashboard](https://img.shields.io/badge/Live_Dashboard-Looker_Studio-brightgreen?style=for-the-badge)](https://lookerstudio.google.com/s/u-64-Hc96RQ)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Application-brightgreen?style=for-the-badge)](https://your-demo-link.com)
+## Architecture du Système
 
----
+### Flux de Données
 
-## Project Overview
+```
+Raw Energy Data (CSV Files) 
+    ↓
+Python Ingestion Layer
+    ↓
+BigQuery Raw Dataset
+    ↓
+dbt Core (Transformations & Tests)
+    ↓
+BigQuery Analytics Dataset
+    ↓
+Looker Studio Dashboard / Live Demo Application
+```
 
-This project implements a production-oriented ELT data pipeline that transforms raw renewable energy datasets into trusted analytical models.  
-It follows modern data engineering best practices, including cloud-native data warehousing, transformation-as-code, automated data quality checks, and BI-ready data modeling.
+## Composants de l'Architecture
 
-The resulting data supports regional and temporal analysis to help stakeholders monitor renewable energy adoption and consumption trends in the context of energy transition.
+| Layer | Technology | Responsibility |
+|-------|-----------|----------------|
+| Ingestion | Python | Load raw data into BigQuery |
+| Storage | BigQuery | Serverless cloud data warehouse |
+| Transformation | dbt Core | Modeling, cleaning, KPI creation |
+| Data Quality | dbt Tests | Automated validation and integrity checks |
+| Analytics | Looker Studio | BI dashboards and reporting |
+| Consumption | Live Demo | External data consumption |
 
----
+## Fonctionnalités Principales
 
-## Architecture
+- End-to-end Modern Data Stack implementation
+- Automated ELT pipeline
+- Cloud-native data warehouse (BigQuery)
+- Modular and versioned dbt data models
+- Automated data quality testing (DataOps approach)
+- Analytics-ready KPI tables
+- Time-series and year-over-year analysis
+- Interactive dashboards for decision support
+- Reproducible and version-controlled environment
 
-```mermaid
-flowchart LR
-    A[Raw Energy Data<br/>CSV Files]
-    B[Python Ingestion Layer]
-    C[BigQuery<br/>Raw Dataset]
-    D[dbt Core<br/>Transformations & Tests]
-    E[BigQuery<br/>Analytics Dataset]
-    F[Looker Studio<br/>Dashboard]
-    G[Live Demo<br/>Application]
+## Modèle de Données et KPI
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    E --> G
-Architecture Components
-Layer	Technology	Responsibility
-Ingestion	Python	Load raw data into BigQuery
-Storage	BigQuery	Serverless cloud data warehouse
-Transformation	dbt Core	Modeling, cleaning, KPI creation
-Data Quality	dbt Tests	Automated validation and integrity checks
-Analytics	Looker Studio	BI dashboards and reporting
-Consumption	Live Demo	External data consumption
+### Table Analytique Finale
 
-Key Features
-End-to-end Modern Data Stack implementation
+`dbt_production.kpi_region_mensuel`
 
-Automated ELT pipeline
+### Métriques Principales
 
-Cloud-native data warehouse (BigQuery)
+- Renewable energy share (%)
+- Total energy consumption (GWh)
 
-Modular and versioned dbt data models
+### Dimensions Analytiques
 
-Automated data quality testing (DataOps approach)
-
-Analytics-ready KPI tables
-
-Time-series and year-over-year analysis
-
-Interactive dashboards for decision support
-
-Reproducible and version-controlled environment
-
-Data Model and KPIs
-Final Analytics Table
-dbt_production.kpi_region_mensuel
-
-Core Metrics
-Renewable energy share (%)
-
-Total energy consumption (GWh)
-
-Analytical Dimensions
-Region
-
-Year
-
-Month
+- Region
+- Year
+- Month
 
 This table is optimized for Business Intelligence tools and downstream analytics use cases.
 
-Data Quality and Testing
+## Qualité des Données et Tests
+
 Data reliability is enforced through automated dbt tests, including:
 
-not_null constraints on critical dimensions
-
-KPI consistency and validity checks
+- not_null constraints on critical dimensions
+- KPI consistency and validity checks
 
 All critical tests pass successfully, ensuring trusted analytical outputs.
 
-Dashboard
+## Dashboard
+
 The Looker Studio dashboard provides:
 
-Regional comparison of renewable energy adoption
+- Regional comparison of renewable energy adoption
+- Monthly and yearly trend analysis
+- Monitoring of key energy performance indicators
 
-Monthly and yearly trend analysis
+Live dashboard: [https://lookerstudio.google.com/s/u-64-Hc96RQ](https://lookerstudio.google.com/s/u-64-Hc96RQ)
 
-Monitoring of key energy performance indicators
+## Stack Technique
 
-Live dashboard:
-https://lookerstudio.google.com/s/u-64-Hc96RQ
+### Langages
 
-Tech Stack
-Languages
-Python 3.10+
+- Python 3.10+
+- SQL (BigQuery Standard SQL)
 
-SQL (BigQuery Standard SQL)
+### Données et Analytics
 
-Data and Analytics
-Google BigQuery
+- Google BigQuery
+- dbt Core
+- Looker Studio
 
-dbt Core
+### Ingénierie et Outils
 
-Looker Studio
+- Git / GitHub
+- Bash
+- Python virtual environments
 
-Engineering and Tooling
-Git / GitHub
+## Installation et Configuration
 
-Bash
-
-Python virtual environments
-
-Installation and Setup
-bash
-Copier le code
+```bash
 # Clone the repository
 git clone https://github.com/CaptainA10/Green_Data_Pipeline.git
 cd Green_Data_Pipeline/green_energy
@@ -135,11 +117,13 @@ dbt deps
 # Run transformations and tests
 dbt run
 dbt test
-BigQuery Configuration
-Create or update ~/.dbt/profiles.yml:
+```
 
-yaml
-Copier le code
+## Configuration BigQuery
+
+Create or update `~/.dbt/profiles.yml`:
+
+```yaml
 green_energy:
   target: dev
   outputs:
@@ -150,19 +134,25 @@ green_energy:
       project: your-project-id
       dataset: dbt_production
       threads: 4
-Deployment
-Create the dbt_production dataset in BigQuery
+```
 
-Ingest raw datasets using Python ingestion scripts
+## Déploiement
 
-Execute dbt transformations locally or via CI/CD pipelines
+1. Create the `dbt_production` dataset in BigQuery
+2. Ingest raw datasets using Python ingestion scripts
+3. Execute dbt transformations locally or via CI/CD pipelines
+4. Publish Looker Studio dashboards
+5. Deploy and expose the live demo application
 
-Publish Looker Studio dashboards
+## Liens
 
-Deploy and expose the live demo application
+- Repository: [https://github.com/CaptainA10/Green_Data_Pipeline](https://github.com/CaptainA10/Green_Data_Pipeline)
+- Live Dashboard: [https://lookerstudio.google.com/s/u-64-Hc96RQ](https://lookerstudio.google.com/s/u-64-Hc96RQ)
 
-Author
-NGUETTE FANE Gad
+## Auteur
+
+**NGUETTE FANE Gad**
+
 Data Engineering Student – Cloud and Analytics
 
 Email: nguettefanegad@gmail.com
