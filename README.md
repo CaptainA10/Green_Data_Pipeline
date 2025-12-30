@@ -1,181 +1,168 @@
-# 🌿 Green Energy Data Engineering Project  
-Modern Data Stack – ELT Pipeline for Renewable Energy Analytics  
+# Green Energy Data Engineering Project
 
-[![Live Dashboard](https://img.shields.io/badge/Looker_Studio-Dashboard-brightgreen?style=for-the-badge&logo=google&logoColor=white)](https://lookerstudio.google.com/s/u-64-Hc96RQ)
-[![Live Demo](https://img.shields.io/badge/DEMO-LIVE-brightgreen?style=for-the-badge)](https://your-demo-link.com)
+End-to-end Modern Data Stack project delivering reliable, analytics-ready KPIs for renewable energy monitoring and decision support.
 
----
-
-## 📛 Badges
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)  
-![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)  
-![React](https://img.shields.io/badge/React-18-blue)  
-![dbt](https://img.shields.io/badge/dbt-Cloud%20%7C%20Core-orange)  
-![BigQuery](https://img.shields.io/badge/Google-BigQuery-blue)
+[![Live Dashboard](https://img.shields.io/badge/Live_Dashboard-Looker_Studio-brightgreen?style=for-the-badge)](https://lookerstudio.google.com/s/u-64-Hc96RQ)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Application-brightgreen?style=for-the-badge)](https://your-demo-link.com)
 
 ---
 
-## ⭐ Features
+## Project Overview
 
-- Complete **Modern Data Stack (MDS)**
-- Fully automated **ELT pipeline**
-- Cloud data warehouse on **Google BigQuery**
-- **dbt transformations** with modular modeling
-- Automated **data quality tests** (DataOps)
-- Analytical KPIs (Region × Month)
-- YoY time-series comparison
-- Interactive **Looker Studio dashboard**
-- Reproducible, version-controlled environment
-- Cloud-deployable architecture
+This project implements a production-oriented ELT data pipeline that transforms raw renewable energy datasets into trusted analytical models.  
+It follows modern data engineering best practices, including cloud-native data warehousing, transformation-as-code, automated data quality checks, and BI-ready data modeling.
+
+The resulting data supports regional and temporal analysis to help stakeholders monitor renewable energy adoption and consumption trends in the context of energy transition.
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture
 
-This project processes raw renewable energy data to compute granular KPIs supporting decision-making for energy transition.
+```mermaid
+flowchart LR
+    A[Raw Energy Data<br/>CSV Files]
+    B[Python Ingestion Layer]
+    C[BigQuery<br/>Raw Dataset]
+    D[dbt Core<br/>Transformations & Tests]
+    E[BigQuery<br/>Analytics Dataset]
+    F[Looker Studio<br/>Dashboard]
+    G[Live Demo<br/>Application]
 
-### 🔧 Components
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    E --> G
+Architecture Components
+Layer	Technology	Responsibility
+Ingestion	Python	Load raw data into BigQuery
+Storage	BigQuery	Serverless cloud data warehouse
+Transformation	dbt Core	Modeling, cleaning, KPI creation
+Data Quality	dbt Tests	Automated validation and integrity checks
+Analytics	Looker Studio	BI dashboards and reporting
+Consumption	Live Demo	External data consumption
 
-| Layer | Technology | Purpose |
-|-------|------------|---------|
-| Extract & Load | Python | Load raw CSV files to BigQuery |
-| Data Warehouse | BigQuery | Serverless scalable storage |
-| Transform | dbt Core | Modeling, cleaning, KPI creation |
-| Visualization | Looker Studio | Dashboards ([Live Dashboard](https://lookerstudio.google.com/s/u-64-Hc96RQ)) |
-| Infra & Tools | Git, Bash, Python venv | Automation & reproducibility |
+Key Features
+End-to-end Modern Data Stack implementation
 
----
+Automated ELT pipeline
 
-## 📊 Analytical Results & KPIs
+Cloud-native data warehouse (BigQuery)
 
-The pipeline produces a final analytics table:
+Modular and versioned dbt data models
 
-### **`dbt_production.kpi_region_mensuel`**
+Automated data quality testing (DataOps approach)
 
-#### Main Indicators
-- **Renewable Share (%)** → `part_renouvelable_pourcentage`
-- **Total Consumption (GWh)**
+Analytics-ready KPI tables
 
-#### Dimensions for Time-Series Analysis
-- `annee`
-- `mois_chiffre`
+Time-series and year-over-year analysis
 
----
+Interactive dashboards for decision support
 
-## 📈 Dashboard Preview
+Reproducible and version-controlled environment
 
-[![Looker Studio Dashboard](docs/3_dashboard_looker.png)](https://lookerstudio.google.com/s/u-64-Hc96RQ)
+Data Model and KPIs
+Final Analytics Table
+dbt_production.kpi_region_mensuel
 
-### 📊 Configuration des Graphiques
+Core Metrics
+Renewable energy share (%)
 
-Voici les détails pour reproduire les visualisations météo :
+Total energy consumption (GWh)
 
-#### 1. Température maximale (Line Chart)
-- **Dimension** : `date`
-- **Mesure** : `max_temp_c`
-- *Objectif* : Suivre l'évolution des pics de chaleur.
+Analytical Dimensions
+Region
 
-#### 2. Rayonnement solaire (Line/Area Chart)
-- **Dimension** : `date`
-- **Mesure** : `solar_radiation_mj_m2`
-- *Objectif* : Identifier les périodes d'ensoleillement optimal.
+Year
 
-#### 3. Vitesse du vent (Line Chart)
-- **Dimension** : `date`
-- **Mesure** : `max_wind_speed_kmh`
-- *Objectif* : Repérer les épisodes venteux pour l'éolien.
+Month
 
----
+This table is optimized for Business Intelligence tools and downstream analytics use cases.
 
-## 🔐 Data Quality (DataOps via dbt)
+Data Quality and Testing
+Data reliability is enforced through automated dbt tests, including:
 
-dbt ensures reliability through automated tests:
+not_null constraints on critical dimensions
 
-- `not_null` on `region`, `annee`, `mois_cle`
-- KPI validity checks
+KPI consistency and validity checks
 
-**Status:** ✔️ *PASS — 5 critical tests validated*
+All critical tests pass successfully, ensuring trusted analytical outputs.
 
-![dbt Proof](docs/2_proof_dbt_run_test.png)
+Dashboard
+The Looker Studio dashboard provides:
 
----
+Regional comparison of renewable energy adoption
 
-## 🛠️ Tech Stack
+Monthly and yearly trend analysis
 
-### Languages
-- Python 3.10+
-- SQL (BigQuery Standard SQL)
+Monitoring of key energy performance indicators
 
-### Tools
-- dbt Core  
-- Google BigQuery  
-- Looker Studio  
-- Git / GitHub  
+Live dashboard:
+https://lookerstudio.google.com/s/u-64-Hc96RQ
 
-### Python Libraries
-- pandas  
-- google-cloud-bigquery  
-- dbt-bigquery  
+Tech Stack
+Languages
+Python 3.10+
 
----
+SQL (BigQuery Standard SQL)
 
-## 🧩 Installation & Setup
+Data and Analytics
+Google BigQuery
 
-```bash
-# 1. Clone the repository
+dbt Core
+
+Looker Studio
+
+Engineering and Tooling
+Git / GitHub
+
+Bash
+
+Python virtual environments
+
+Installation and Setup
+bash
+Copier le code
+# Clone the repository
 git clone https://github.com/CaptainA10/Green_Data_Pipeline.git
 cd Green_Data_Pipeline/green_energy
 
-# 2. Install dependencies
+# Install dependencies
 pip install -r requirements.txt
 dbt deps
 
-# 3. Run dbt transformations and tests
+# Run transformations and tests
 dbt run
 dbt test
-```
-Configure BigQuery (profiles.yml)
+BigQuery Configuration
+Create or update ~/.dbt/profiles.yml:
 
-Create or edit:
-
-~/.dbt/profiles.yml
-
+yaml
+Copier le code
 green_energy:
   target: dev
   outputs:
     dev:
       type: bigquery
       method: service-account
-      keyfile: "path/to/your-service-account.json"
-      project: "your-project-id"
-      dataset: "dbt_production"
+      keyfile: path/to/service-account.json
+      project: your-project-id
+      dataset: dbt_production
       threads: 4
-
-
-🚀 Deployment Guide
-
+Deployment
 Create the dbt_production dataset in BigQuery
 
-Upload raw datasets using ingestion scripts
+Ingest raw datasets using Python ingestion scripts
 
-Run dbt via CI/CD (GitHub Actions, GitLab CI, dbt Cloud)
+Execute dbt transformations locally or via CI/CD pipelines
 
-Publish your Looker Studio dashboard → Live Dashboard
+Publish Looker Studio dashboards
 
-🤝 Contributing
+Deploy and expose the live demo application
 
-Fork the repository
-
-Create a feature branch
-
-Commit with meaningful messages
-
-Open a Pull Request
-
-👨‍💻 Author
-
+Author
 NGUETTE FANE Gad
-Data Engineer Student – Cloud & Analytics
+Data Engineering Student – Cloud and Analytics
 
-📧 Email: nguettefanegad@gmail.com
+Email: nguettefanegad@gmail.com
